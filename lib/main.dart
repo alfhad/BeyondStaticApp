@@ -1,7 +1,10 @@
 import 'package:beyond_static_app/screens/dashboard.dart';
 import 'package:beyond_static_app/screens/login.dart';
 import 'package:beyond_static_app/screens/nav.dart';
+import 'package:beyond_static_app/screens/signUpNext.dart';
 import 'package:flutter/material.dart';
+
+import 'screens/signUp.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,13 +17,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF2D62ED),
       ),
-      initialRoute: '/nav',
+      initialRoute: '/login',
       routes: {
         '/login': (context) => Login(),
         '/dashboard': (context) => DashBoard(),
         '/nav': (context) => Nav(),
+        '/signup': (context) => SignUp(),
+        '/next': (context) => Next(),
       },
       debugShowCheckedModeBanner: false,
     );
