@@ -1,7 +1,6 @@
 import 'package:beyond_static_app/screens/dashboard.dart';
 import 'package:beyond_static_app/screens/login.dart';
 import 'package:beyond_static_app/screens/nav.dart';
-import 'package:beyond_static_app/screens/signUpNext.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/signUp.dart';
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => DashBoard(),
         '/nav': (context) => Nav(),
         '/signup': (context) => SignUp(),
-        '/next': (context) => Next(),
       },
       debugShowCheckedModeBanner: false,
     );

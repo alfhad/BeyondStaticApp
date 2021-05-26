@@ -1,3 +1,5 @@
+import 'package:beyond_static_app/dialogBox.dart';
+import 'package:beyond_static_app/screens/allTheBrains/signUpBrain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -7,6 +9,12 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  String userName = '';
+  String fName = '';
+  String lName = '';
+  String password = '';
+  String email = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,7 +139,7 @@ class _SignUpState extends State<SignUp> {
                                         disabledBorder: InputBorder.none,
                                       ),
                                       onSubmitted: (String firstName) {
-                                        print("User entered: $firstName");
+                                        fName = firstName;
                                       },
                                     ),
                                   ),
@@ -183,7 +191,7 @@ class _SignUpState extends State<SignUp> {
                                         disabledBorder: InputBorder.none,
                                       ),
                                       onSubmitted: (String lastName) {
-                                        print("User entered: $lastName");
+                                        lName = lastName;
                                       },
                                     ),
                                   ),
@@ -234,37 +242,242 @@ class _SignUpState extends State<SignUp> {
                                         errorBorder: InputBorder.none,
                                         disabledBorder: InputBorder.none,
                                       ),
-                                      onSubmitted: (String userName) {
-                                        print("User entered: $userName");
+                                      onSubmitted: (String username) {
+                                        userName = username;
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // SizedBox(
+                              //   height: 30.0,
+                              // ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  Text(
+                                    'Email Id',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(width: 20.0),
+                                  Container(
+                                    // color: Colors.white,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.horizontal(
+                                        left: Radius.circular(30.0),
+                                        right: Radius.circular(30.0),
+                                      ),
+                                    ),
+                                    width: 300.0,
+                                    height: 35.0,
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        contentPadding: EdgeInsets.all(10.0),
+                                        border: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        errorBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                      ),
+                                      onSubmitted: (String emailId) {
+                                        email = emailId;
                                       },
                                     ),
                                   ),
                                 ],
                               ),
                               SizedBox(
-                                height: 30.0,
+                                height: 20.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  Text(
+                                    'Password',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(width: 20.0),
+                                  Container(
+                                    // color: Colors.white,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.horizontal(
+                                        left: Radius.circular(30.0),
+                                        right: Radius.circular(30.0),
+                                      ),
+                                    ),
+                                    width: 300.0,
+                                    height: 35.0,
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        contentPadding: EdgeInsets.all(10.0),
+                                        border: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        errorBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                      ),
+                                      onSubmitted: (String pass) {
+                                        password = pass;
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 20.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  Text(
+                                    'Confirm Password',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SizedBox(width: 20.0),
+                                  Container(
+                                    // color: Colors.white,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.horizontal(
+                                        left: Radius.circular(30.0),
+                                        right: Radius.circular(30.0),
+                                      ),
+                                    ),
+                                    width: 300.0,
+                                    height: 35.0,
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        contentPadding: EdgeInsets.all(10.0),
+                                        border: InputBorder.none,
+                                        focusedBorder: InputBorder.none,
+                                        enabledBorder: InputBorder.none,
+                                        errorBorder: InputBorder.none,
+                                        disabledBorder: InputBorder.none,
+                                      ),
+                                      onSubmitted: (String cnfPass) {
+                                        print("User entered: $cnfPass");
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 15.0,
                               ),
                               // Iske aage se tumlog karo sign in aur sign up button
                               // Container mein hi banao dono button
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  Radio(
+                                      value: null,
+                                      groupValue: null,
+                                      onChanged: null),
+                                  Text(
+                                    'I Agree To Terms And Condition',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 20.0,
+                                  ),
+                                  Radio(
+                                      value: null,
+                                      groupValue: null,
+                                      onChanged: null),
+                                  Text(
+                                    'I agree to not use this for commercial\n'
+                                    'purpose',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
                               MaterialButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/next');
+                                onPressed: () async {
+                                  var jwt = await SignUpBrain().signUpAttempt(
+                                    userName,
+                                    fName,
+                                    lName,
+                                    email,
+                                    password,
+                                  );
+                                  if (jwt != null)
+                                    Navigator.pushNamed(context, '/nav');
+                                  else
+                                    displayDialog(context, "An Error Occurred",
+                                        "That username already exists");
                                 },
                                 child: Container(
                                   child: Row(
                                     children: [
                                       SizedBox(
-                                        width: 60.0,
+                                        width: 55.0,
                                       ),
                                       Text(
-                                        'Next',
+                                        'Finish',
                                         style: TextStyle(
                                           color: Color(0xFF2D62ED),
                                           fontWeight: FontWeight.normal,
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 30,
+                                        width: 26,
                                       ),
                                       CircleAvatar(
                                         backgroundColor: Color(0xFF789AF3),
