@@ -1,4 +1,4 @@
-# beyond_static
+# beyond_static_app
 
 A new Flutter project.
 
