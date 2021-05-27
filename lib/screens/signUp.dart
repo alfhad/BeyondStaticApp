@@ -53,6 +53,8 @@ class _SignUpState extends State<SignUp> {
                         height: 50.0,
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height / 1.5,
+
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
@@ -117,31 +119,36 @@ class _SignUpState extends State<SignUp> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(width: 20.0),
-                                  Container(
-                                    // color: Colors.white,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.horizontal(
-                                        left: Radius.circular(30.0),
-                                        right: Radius.circular(30.0),
+                                  Expanded(
+                                    child: Container(
+                                      // color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(30.0),
+                                          right: Radius.circular(30.0),
+                                        ),
+                                      ),
+
+                                      height: 35.0,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          contentPadding:
+                                              EdgeInsets.only(left: 10.0),
+                                          border: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
+                                          enabledBorder: InputBorder.none,
+                                          errorBorder: InputBorder.none,
+                                          disabledBorder: InputBorder.none,
+                                        ),
+                                        onSubmitted: (String firstName) {
+                                          fName = firstName;
+                                        },
                                       ),
                                     ),
-                                    width: 300.0,
-                                    height: 35.0,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        contentPadding:
-                                            EdgeInsets.only(left: 10.0),
-                                        border: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        enabledBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        disabledBorder: InputBorder.none,
-                                      ),
-                                      onSubmitted: (String firstName) {
-                                        fName = firstName;
-                                      },
-                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15.0,
                                   ),
                                 ],
                               ),
@@ -170,30 +177,35 @@ class _SignUpState extends State<SignUp> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(width: 20.0),
-                                  Container(
-                                    // color: Colors.white,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.horizontal(
-                                        left: Radius.circular(30.0),
-                                        right: Radius.circular(30.0),
+                                  Expanded(
+                                    child: Container(
+                                      // color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(30.0),
+                                          right: Radius.circular(30.0),
+                                        ),
+                                      ),
+
+                                      height: 35.0,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.all(10.0),
+                                          border: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
+                                          enabledBorder: InputBorder.none,
+                                          errorBorder: InputBorder.none,
+                                          disabledBorder: InputBorder.none,
+                                        ),
+                                        onSubmitted: (String lastName) {
+                                          lName = lastName;
+                                        },
                                       ),
                                     ),
-                                    width: 300.0,
-                                    height: 35.0,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(10.0),
-                                        border: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        enabledBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        disabledBorder: InputBorder.none,
-                                      ),
-                                      onSubmitted: (String lastName) {
-                                        lName = lastName;
-                                      },
-                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15.0,
                                   ),
                                 ],
                               ),
@@ -222,30 +234,35 @@ class _SignUpState extends State<SignUp> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(width: 20.0),
-                                  Container(
-                                    // color: Colors.white,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.horizontal(
-                                        left: Radius.circular(30.0),
-                                        right: Radius.circular(30.0),
+                                  Expanded(
+                                    child: Container(
+                                      // color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(30.0),
+                                          right: Radius.circular(30.0),
+                                        ),
+                                      ),
+
+                                      height: 35.0,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.all(10.0),
+                                          border: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
+                                          enabledBorder: InputBorder.none,
+                                          errorBorder: InputBorder.none,
+                                          disabledBorder: InputBorder.none,
+                                        ),
+                                        onSubmitted: (String username) {
+                                          userName = username;
+                                        },
                                       ),
                                     ),
-                                    width: 300.0,
-                                    height: 35.0,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(10.0),
-                                        border: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        enabledBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        disabledBorder: InputBorder.none,
-                                      ),
-                                      onSubmitted: (String username) {
-                                        userName = username;
-                                      },
-                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15.0,
                                   ),
                                 ],
                               ),
@@ -277,30 +294,35 @@ class _SignUpState extends State<SignUp> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(width: 20.0),
-                                  Container(
-                                    // color: Colors.white,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.horizontal(
-                                        left: Radius.circular(30.0),
-                                        right: Radius.circular(30.0),
+                                  Expanded(
+                                    child: Container(
+                                      // color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(30.0),
+                                          right: Radius.circular(30.0),
+                                        ),
+                                      ),
+                                      width: 300.0,
+                                      height: 35.0,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.all(10.0),
+                                          border: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
+                                          enabledBorder: InputBorder.none,
+                                          errorBorder: InputBorder.none,
+                                          disabledBorder: InputBorder.none,
+                                        ),
+                                        onSubmitted: (String emailId) {
+                                          email = emailId;
+                                        },
                                       ),
                                     ),
-                                    width: 300.0,
-                                    height: 35.0,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(10.0),
-                                        border: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        enabledBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        disabledBorder: InputBorder.none,
-                                      ),
-                                      onSubmitted: (String emailId) {
-                                        email = emailId;
-                                      },
-                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15.0,
                                   ),
                                 ],
                               ),
@@ -329,30 +351,35 @@ class _SignUpState extends State<SignUp> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(width: 20.0),
-                                  Container(
-                                    // color: Colors.white,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.horizontal(
-                                        left: Radius.circular(30.0),
-                                        right: Radius.circular(30.0),
+                                  Expanded(
+                                    child: Container(
+                                      // color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(30.0),
+                                          right: Radius.circular(30.0),
+                                        ),
+                                      ),
+                                      width: 300.0,
+                                      height: 35.0,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.all(10.0),
+                                          border: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
+                                          enabledBorder: InputBorder.none,
+                                          errorBorder: InputBorder.none,
+                                          disabledBorder: InputBorder.none,
+                                        ),
+                                        onSubmitted: (String pass) {
+                                          password = pass;
+                                        },
                                       ),
                                     ),
-                                    width: 300.0,
-                                    height: 35.0,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(10.0),
-                                        border: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        enabledBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        disabledBorder: InputBorder.none,
-                                      ),
-                                      onSubmitted: (String pass) {
-                                        password = pass;
-                                      },
-                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15.0,
                                   ),
                                 ],
                               ),
@@ -381,30 +408,35 @@ class _SignUpState extends State<SignUp> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   SizedBox(width: 20.0),
-                                  Container(
-                                    // color: Colors.white,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.horizontal(
-                                        left: Radius.circular(30.0),
-                                        right: Radius.circular(30.0),
+                                  Expanded(
+                                    child: Container(
+                                      // color: Colors.white,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(30.0),
+                                          right: Radius.circular(30.0),
+                                        ),
+                                      ),
+                                      width: 300.0,
+                                      height: 35.0,
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          contentPadding: EdgeInsets.all(10.0),
+                                          border: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
+                                          enabledBorder: InputBorder.none,
+                                          errorBorder: InputBorder.none,
+                                          disabledBorder: InputBorder.none,
+                                        ),
+                                        onSubmitted: (String cnfPass) {
+                                          print("User entered: $cnfPass");
+                                        },
                                       ),
                                     ),
-                                    width: 300.0,
-                                    height: 35.0,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(10.0),
-                                        border: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        enabledBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        disabledBorder: InputBorder.none,
-                                      ),
-                                      onSubmitted: (String cnfPass) {
-                                        print("User entered: $cnfPass");
-                                      },
-                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15.0,
                                   ),
                                 ],
                               ),
@@ -593,7 +625,7 @@ class _SignUpState extends State<SignUp> {
                           ],
                           borderRadius: BorderRadius.circular(20.0),
                         ),
-                        height: 517.0,
+                        // height: 517.0,
                         width: 450.0,
                       ),
                     ],

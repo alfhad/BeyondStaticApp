@@ -10,11 +10,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Devang is in love with someone',
       theme: ThemeData(
         primaryColor: Color(0xFF2D62ED),
       ),

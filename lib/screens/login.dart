@@ -82,6 +82,7 @@ class _LoginState extends State<Login> {
                                   fontWeight: FontWeight.w300,
                                   color: Colors.white,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                               SizedBox(
                                 height: 20.0,
@@ -133,6 +134,9 @@ class _LoginState extends State<Login> {
                                         username = tempUserName;
                                       },
                                     ),
+                                  ),
+                                  SizedBox(
+                                    width: 15.0,
                                   ),
                                 ],
                               ),
@@ -188,9 +192,9 @@ class _LoginState extends State<Login> {
                                       },
                                     ),
                                   ),
-                                  // SizedBox(
-                                  //   width: 10.0,
-                                  // )
+                                  SizedBox(
+                                    width: 15.0,
+                                  )
                                 ],
                               ),
                               SizedBox(
@@ -320,7 +324,7 @@ class _LoginState extends State<Login> {
                                 ],
                               ),
                               SizedBox(
-                                height: 10,
+                                height: 30.0,
                               ),
                               Text(
                                 'Terms And Condition',
