@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:beyond_static_app/screens/dashboard.dart';
+import 'package:beyond_static_app/screens/loading.dart';
 import 'package:beyond_static_app/screens/login.dart';
 import 'package:beyond_static_app/screens/nav.dart';
+import 'package:beyond_static_app/screens/profileCards/reusableCard.dart';
+import 'package:beyond_static_app/screens/settings.dart';
 import 'package:flutter/material.dart';
-
 import 'screens/signUp.dart';
 
 void main() {
@@ -17,12 +21,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFF2D62ED),
       ),
-      initialRoute: '/login',
+      initialRoute: '/loading',
       routes: {
+        // '/cards': (context) => Cards(),
         '/login': (context) => Login(),
         '/dashboard': (context) => DashBoard(),
         '/nav': (context) => Nav(),
         '/signup': (context) => SignUp(),
+        '/loading': (context) => Loading(),
+        '/settings': (context) => Settings(),
       },
       debugShowCheckedModeBanner: false,
     );

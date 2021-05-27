@@ -1,3 +1,4 @@
+import 'package:beyond_static_app/screens/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'dashboard.dart';
@@ -21,7 +22,7 @@ class _NavState extends State<Nav> {
     DashBoard(),
     Text('Pie-Chart'),
     Text('Settings-1'),
-    Text('Settings'),
+    Settings(),
   ];
 
   @override

@@ -27,7 +27,6 @@ class _DashBoardState extends State<DashBoard> {
                   SizedBox(
                     height: 10,
                   ),
-                  TopCard(),
                   SizedBox(
                     height: 10,
                   ),

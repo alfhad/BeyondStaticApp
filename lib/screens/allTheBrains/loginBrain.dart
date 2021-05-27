@@ -7,7 +7,6 @@ final storage = FlutterSecureStorage();
 
 class LoginBrain {
   Future<String?> loginAttempt(String username, String password) async {
-    print('I am called');
     var res = await http.post(
       Uri.parse(SERVER_IP),
       body: {
@@ -16,7 +15,6 @@ class LoginBrain {
       },
     );
     var body = json.decode(res.body);
-    print(body);
     if (body['status'] == '200 OK') {
       return body['token'];
     }

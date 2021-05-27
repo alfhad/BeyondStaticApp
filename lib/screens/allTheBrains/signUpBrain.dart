@@ -6,18 +6,21 @@ const SERVER_IP = 'http://192.168.0.103:8000/api/register';
 final storage = FlutterSecureStorage();
 
 class SignUpBrain {
-  Future<String?> signUpAttempt(String username, String fName, String lName,
+  Future<int?> signUpAttempt(String username, String fName, String lName,
       String email, String password) async {
     var res = await http.post(Uri.parse(SERVER_IP), body: {
-      "username": "$username",
-      "password": "$password",
-      "fname": "$fName",
-      "lname": "$lName",
-      "email": "$email"
+      "username": username,
+      "password": password,
+      "fname": fName,
+      "lname": lName,
+      "email": email,
     });
 
     var body = json.decode(res.body);
-    if (body['status'] == '200 OK') return body['token'];
+    print("\n $body \n");
+    if (body['status'] == '200 OK')
+      return 201;
+    else if (body['status'] == '403 User already exists') return 409;
     return null;
   }
 }
