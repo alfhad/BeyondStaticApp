@@ -46,8 +46,10 @@ class _CardsState extends State<Cards> {
           ),
           Expanded(
             child: ReusableCard(
-                colour: Color(0xFFFF007C),
+                colour: Color(0xFF7D00B5),
                 cardChild: CardContent(
+                  entries: '13',
+                  state: '(Active)',
                   title: 'Project 5',
                   description: 'Description 5',
                 )),
@@ -61,7 +63,14 @@ class _CardsState extends State<Cards> {
 class CardContent extends StatelessWidget {
   final String title;
   final String description;
-  CardContent({required this.title, required this.description});
+  final String entries;
+  final String state;
+
+  CardContent(
+      {required this.title,
+      required this.description,
+      required this.entries,
+      required this.state});
 
   @override
   Widget build(BuildContext context) {
@@ -69,20 +78,45 @@ class CardContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 22.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 22.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              state,
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
-        Text(
-          description,
-          style: TextStyle(
-            fontSize: 15.0,
-            color: Colors.black,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              description,
+              style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              entries + ' entries',
+              style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,

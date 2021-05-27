@@ -9,6 +9,15 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  void changeState() {
+    setState(() {
+      isNotFinished = !isNotFinished;
+    });
+  }
+
+  bool _buttonState = false;
+  bool isNotFinished = false;
+
   TextEditingController _userNameController = TextEditingController();
   TextEditingController _fNameController = TextEditingController();
   TextEditingController _lNameController = TextEditingController();
@@ -360,8 +369,8 @@ class _SignUpState extends State<SignUp> {
                                         height: 35.0,
                                         child: TextField(
                                           decoration: InputDecoration(
-                                            contentPadding:
-                                                EdgeInsets.all(10.0),
+                                            contentPadding: EdgeInsets.only(
+                                                left: 12.0, bottom: 14.0),
                                             border: InputBorder.none,
                                             focusedBorder: InputBorder.none,
                                             enabledBorder: InputBorder.none,
@@ -417,8 +426,8 @@ class _SignUpState extends State<SignUp> {
                                         height: 35.0,
                                         child: TextField(
                                           decoration: InputDecoration(
-                                            contentPadding:
-                                                EdgeInsets.all(10.0),
+                                            contentPadding: EdgeInsets.only(
+                                                left: 12.0, bottom: 14.0),
                                             border: InputBorder.none,
                                             focusedBorder: InputBorder.none,
                                             enabledBorder: InputBorder.none,
@@ -444,117 +453,99 @@ class _SignUpState extends State<SignUp> {
                                 SizedBox(
                                   height: 15.0,
                                 ),
-                                // Iske aage se tumlog karo sign in aur sign up button
-                                // Container mein hi banao dono button
                                 Row(
                                   children: [
                                     SizedBox(
                                       width: 20.0,
                                     ),
-                                    Radio(
-                                        value: null,
-                                        groupValue: null,
-                                        onChanged: null),
+                                    Checkbox(
+                                      activeColor: Color(0x272D3B33),
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _buttonState = value as bool;
+                                          changeState();
+                                        });
+                                      },
+                                      value: _buttonState,
+                                    ),
                                     Text(
-                                      'I Agree To Terms And Condition',
+                                      'I agree to Terms And Condition',
                                       style: TextStyle(
                                         color: Colors.white,
                                       ),
                                     ),
                                   ],
                                 ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 20.0,
-                                    ),
-                                    Radio(
-                                        value: null,
-                                        groupValue: null,
-                                        onChanged: null),
-                                    Text(
-                                      'I agree to not use this for commercial\n'
-                                      'purpose',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                MaterialButton(
-                                  onPressed: () async {
-                                    if (_userNameController.text.length < 4)
-                                      displayDialog(context, "Invalid Username",
-                                          "The username should be at least 6 characters long");
-                                    else if (_passwordController.text.length <
-                                        4)
-                                      displayDialog(context, "Invalid Password",
-                                          "The password should be at least 8 characters long");
-                                    else {
-                                      var res =
-                                          await SignUpBrain().signUpAttempt(
-                                        _userNameController.text,
-                                        _fNameController.text,
-                                        _lNameController.text,
-                                        _emailController.text,
-                                        _passwordController.text,
-                                      );
-                                      if (res == 201) {
-                                        displayDialog(context, "Success",
-                                            "The user was created. Log in now.");
-                                        Navigator.pushNamed(context, '/login');
-                                      } else if (res == 409)
+                                Visibility(
+                                  visible: isNotFinished,
+                                  child: MaterialButton(
+                                    onPressed: () async {
+                                      if (_userNameController.text.length < 6)
                                         displayDialog(
                                             context,
-                                            "That username is already registered",
-                                            "Please try to sign up using another username or log in if you already have an account.");
+                                            "Invalid Username",
+                                            "The username should be at least 6 characters long");
+                                      else if (_passwordController.text.length <
+                                          8)
+                                        displayDialog(
+                                            context,
+                                            "Invalid Password",
+                                            "The password should be at least 8 characters long");
                                       else {
-                                        displayDialog(context, "Error",
-                                            "An unknown error occurred.");
+                                        var res =
+                                            await SignUpBrain().signUpAttempt(
+                                          _userNameController.text,
+                                          _fNameController.text,
+                                          _lNameController.text,
+                                          _emailController.text,
+                                          _passwordController.text,
+                                        );
+                                        if (res == 201) {
+                                          displayDialog(context, "Success",
+                                              "The user was created. Log in now.");
+                                          Navigator.pushNamed(
+                                              context, '/login');
+                                        } else if (res == 409)
+                                          displayDialog(
+                                              context,
+                                              "That username is already registered",
+                                              "Please try to sign up using another username or log in if you already have an account.");
+                                        else {
+                                          displayDialog(context, "Error",
+                                              "An unknown error occurred.");
+                                        }
                                       }
-                                    }
-                                    // var jwt = await SignUpBrain().signUpAttempt(
-                                    //   userName,
-                                    //   fName,
-                                    //   lName,
-                                    //   email,
-                                    //   password,
-                                    // );
-                                    // if (jwt != null)
-                                    //   Navigator.pushNamed(context, '/nav');
-                                    // else
-                                    //   displayDialog(context, "An Error Occurred",
-                                    //       "That username already exists");
-                                  },
-                                  child: Container(
-                                    child: Row(
-                                      children: [
-                                        SizedBox(
-                                          width: 55.0,
-                                        ),
-                                        Text(
-                                          'Finish',
-                                          style: TextStyle(
-                                            color: Color(0xFF2D62ED),
-                                            fontWeight: FontWeight.normal,
+                                    },
+                                    child: Container(
+                                      child: Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 55.0,
                                           ),
-                                        ),
-                                        SizedBox(
-                                          width: 26,
-                                        ),
-                                        CircleAvatar(
-                                          backgroundColor: Color(0xFF789AF3),
-                                          radius: 17.0,
-                                          child: Icon(Icons.east, size: 23.0),
-                                        ),
-                                      ],
+                                          Text(
+                                            'Finish',
+                                            style: TextStyle(
+                                              color: Color(0xFF2D62ED),
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 26,
+                                          ),
+                                          CircleAvatar(
+                                            backgroundColor: Color(0xFF789AF3),
+                                            radius: 17.0,
+                                            child: Icon(Icons.east, size: 23.0),
+                                          ),
+                                        ],
+                                      ),
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(20.0)),
+                                      height: 40.0,
+                                      width: 160.0,
                                     ),
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(20.0)),
-                                    height: 40.0,
-                                    width: 160.0,
                                   ),
                                 ),
                                 Row(

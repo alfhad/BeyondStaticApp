@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:beyond_static_app/screens/dashboard.dart';
 import 'package:beyond_static_app/screens/loading.dart';
 import 'package:beyond_static_app/screens/login.dart';
 import 'package:beyond_static_app/screens/nav.dart';
-import 'package:beyond_static_app/screens/profileCards/reusableCard.dart';
 import 'package:beyond_static_app/screens/settings.dart';
 import 'package:flutter/material.dart';
 import 'screens/signUp.dart';
@@ -23,7 +20,6 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/loading',
       routes: {
-        // '/cards': (context) => Cards(),
         '/login': (context) => Login(),
         '/dashboard': (context) => DashBoard(),
         '/nav': (context) => Nav(),
