@@ -13,8 +13,10 @@ class _CardsState extends State<Cards> {
         children: [
           Expanded(
             child: ReusableCard(
-              colour: Colors.white,
+              colour: Color(0xFF7D00B5),
               cardChild: CardContent(
+                entries: '13',
+                state: '(Active)',
                 title: 'Project 1',
                 description: 'Description 1',
               ),
@@ -22,8 +24,10 @@ class _CardsState extends State<Cards> {
           ),
           Expanded(
             child: ReusableCard(
-                colour: Color(0xFFFF007C),
+                colour: Color(0xFF7D00B5),
                 cardChild: CardContent(
+                  entries: '13',
+                  state: '(Active)',
                   title: 'Project 2',
                   description: 'Description 2',
                 )),
@@ -32,6 +36,8 @@ class _CardsState extends State<Cards> {
             child: ReusableCard(
                 colour: Color(0xFF2D62ED),
                 cardChild: CardContent(
+                  entries: '13',
+                  state: '(Active)',
                   title: 'Project 3',
                   description: 'Description 3',
                 )),
@@ -40,6 +46,8 @@ class _CardsState extends State<Cards> {
             child: ReusableCard(
                 colour: Color(0xFF2D62ED),
                 cardChild: CardContent(
+                  entries: '13',
+                  state: '(Active)',
                   title: 'Project 4',
                   description: 'Description 4',
                 )),
