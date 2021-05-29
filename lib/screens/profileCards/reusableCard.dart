@@ -9,61 +9,7 @@ class _CardsState extends State<Cards> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: ReusableCard(
-              colour: Color(0xFF7D00B5),
-              cardChild: CardContent(
-                entries: '13',
-                state: '(Active)',
-                title: 'Project 1',
-                description: 'Description 1',
-              ),
-            ),
-          ),
-          Expanded(
-            child: ReusableCard(
-                colour: Color(0xFF7D00B5),
-                cardChild: CardContent(
-                  entries: '13',
-                  state: '(Active)',
-                  title: 'Project 2',
-                  description: 'Description 2',
-                )),
-          ),
-          Expanded(
-            child: ReusableCard(
-                colour: Color(0xFF2D62ED),
-                cardChild: CardContent(
-                  entries: '13',
-                  state: '(Active)',
-                  title: 'Project 3',
-                  description: 'Description 3',
-                )),
-          ),
-          Expanded(
-            child: ReusableCard(
-                colour: Color(0xFF2D62ED),
-                cardChild: CardContent(
-                  entries: '13',
-                  state: '(Active)',
-                  title: 'Project 4',
-                  description: 'Description 4',
-                )),
-          ),
-          Expanded(
-            child: ReusableCard(
-                colour: Color(0xFF7D00B5),
-                cardChild: CardContent(
-                  entries: '13',
-                  state: '(Active)',
-                  title: 'Project 5',
-                  description: 'Description 5',
-                )),
-          ),
-        ],
-      ),
+
     );
   }
 }
