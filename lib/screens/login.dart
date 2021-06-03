@@ -207,6 +207,10 @@ class _LoginState extends State<Login> {
                                     );
                                     if (jwt != null) {
                                       storage.write(
+                                        key: "username",
+                                        value: _usernameController.text,
+                                      );
+                                      storage.write(
                                         key: "jwt",
                                         value: jwt.toString(),
                                       );

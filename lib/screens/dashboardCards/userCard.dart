@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+final storage = FlutterSecureStorage();
 
 class UserCard extends StatefulWidget {
   @override
@@ -6,6 +9,16 @@ class UserCard extends StatefulWidget {
 }
 
 class _UserCardState extends State<UserCard> {
+  var username;
+
+  void getUsername() async {
+    username = (await storage.read(key: 'username'))!;
+  }
+
+  _UserCardState() {
+    this.getUsername();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,9 +30,9 @@ class _UserCardState extends State<UserCard> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Welcome back, Julie!',
+                'Welcome back, $username!',
                 style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.w900,
                 ),
               ),

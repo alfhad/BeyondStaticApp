@@ -1,7 +1,10 @@
 import 'package:beyond_static_app/screens/dashboard.dart';
+import 'package:beyond_static_app/screens/documentation.dart';
 import 'package:beyond_static_app/screens/loading.dart';
 import 'package:beyond_static_app/screens/login.dart';
 import 'package:beyond_static_app/screens/nav.dart';
+import 'package:beyond_static_app/screens/newProject.dart';
+import 'package:beyond_static_app/screens/projectData.dart';
 import 'package:beyond_static_app/screens/settings.dart';
 import 'package:flutter/material.dart';
 import 'screens/signUp.dart';
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Devang is in love with someone',
+      title: 'Beyond Static',
       theme: ThemeData(
         primaryColor: Color(0xFF2D62ED),
       ),
@@ -23,9 +26,12 @@ class MyApp extends StatelessWidget {
         '/login': (context) => Login(),
         '/dashboard': (context) => DashBoard(),
         '/nav': (context) => Nav(),
+        '/documentation': (context) => Documentation(),
         '/signup': (context) => SignUp(),
         '/loading': (context) => Loading(),
         '/settings': (context) => Settings(),
+        '/project_data': (context) => ProjectData(),
+        '/new_project': (context) => NewProject(),
       },
       debugShowCheckedModeBanner: false,
     );

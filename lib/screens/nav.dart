@@ -1,3 +1,5 @@
+import 'package:beyond_static_app/screens/documentation.dart';
+import 'package:beyond_static_app/screens/home.dart';
 import 'package:beyond_static_app/screens/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -12,25 +14,18 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _currentIndex = 0;
 
-  // Color iconBgColor = Colors.white;
-  // Color iconColor = Color(0xFF2D62ED);
-
   List indexes = [false, false, false, false, false];
 
   List _widgetOptions = [
-    Text('Home'),
+    Home(),
     DashBoard(),
-    Text('Pie-Chart'),
-    Text('Settings-1'),
+    Documentation(),
     Settings(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Beyond Static'),
-      ),
       bottomNavigationBar: ConvexAppBar(
         backgroundColor: Colors.white,
         items: [
@@ -44,20 +39,11 @@ class _NavState extends State<Nav> {
             ),
           ),
           TabItem(
-              icon: CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 40.0,
-            child: SvgPicture.asset(
-              'images/folder.svg',
-              color: Color(0xFF2D62ED),
-            ),
-          )),
-          TabItem(
             icon: CircleAvatar(
               backgroundColor: Colors.white,
               radius: 40.0,
               child: SvgPicture.asset(
-                'images/pie-chart.svg',
+                'images/folder.svg',
                 color: Color(0xFF2D62ED),
               ),
             ),
@@ -67,7 +53,7 @@ class _NavState extends State<Nav> {
               backgroundColor: Colors.white,
               radius: 40.0,
               child: SvgPicture.asset(
-                'images/settings-1.svg',
+                'images/documentation.svg',
                 color: Color(0xFF2D62ED),
               ),
             ),
@@ -86,12 +72,6 @@ class _NavState extends State<Nav> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
-            // for (int i = 0; i < 5; i++) {
-            //   if (i == index)
-            //     indexes[i] = true;
-            //   else
-            //     indexes[i] = false;
-            // }
           });
         },
       ),

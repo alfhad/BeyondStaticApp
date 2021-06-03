@@ -39,7 +39,7 @@ class _PinkCardState extends State<PinkCard> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                '13 New Entrie\'s',
+                '13 New Entries',
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 30.0,

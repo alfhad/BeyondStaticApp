@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 final storage = FlutterSecureStorage();
 
-const SERVER_IP = 'http://192.168.0.103:8000/api/tokencheck';
+const SERVER_IP = 'http://192.168.0.104:8000/api/tokencheck';
 
 class Authenticate {
   Future<bool> get authenticateUser async {
@@ -15,7 +15,6 @@ class Authenticate {
         "token": jwt,
       });
       var check = json.decode(res.body);
-      print(check);
       if (check['status'] == false) {
         return false;
       } else

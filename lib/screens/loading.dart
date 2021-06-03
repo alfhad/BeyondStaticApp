@@ -1,6 +1,8 @@
 import 'package:beyond_static_app/screens/allTheBrains/authenticateUser.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'nav.dart';
+import 'login.dart';
 
 class Loading extends StatefulWidget {
   @override
@@ -11,9 +13,11 @@ class _LoadingState extends State<Loading> {
   void bihari() async {
     var check = await Authenticate().authenticateUser;
     if (check) {
-      Navigator.pushNamed(context, '/nav');
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (_) => Nav()));
     } else {
-      Navigator.pushNamed(context, '/login');
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (_) => Login()));
     }
   }
 
