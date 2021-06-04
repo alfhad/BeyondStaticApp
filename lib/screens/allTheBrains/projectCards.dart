@@ -1,14 +1,13 @@
 import 'dart:collection';
-
 import 'package:beyond_static_app/screens/allTheBrains/projectBrain.dart';
 import 'package:beyond_static_app/screens/profileCards/cardContent.dart';
 import 'package:beyond_static_app/screens/profileCards/reusableCard.dart';
 import 'package:flutter/material.dart';
 
 class CardCreator {
-  late List<Widget> cards = [];
+  List<Widget> cards = [];
 
-  Future<List> getAllCards() async {
+  Future<List> getAllCards()  async {
     var projects = await ProjectOptions().getProjects();
     int length = projects.length;
     for (int i = 0; i < length; i++) {

@@ -42,13 +42,30 @@ class _DashBoardState extends State<DashBoard> {
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: cc.cards,
-                        ),
-                      ),
+                    // FutureBuilder<List>(
+                    //   future: CardCreator().cards,
+                    //   builder: (BuildContext context, AsyncSnapshot<List> snapshot){
+                    //     if(snapshot.hasData){
+                    //       print(snapshot.data);
+                    //       return ListView.builder(itemBuilder: (BuildContext context,int index){
+                    //         return Container(
+                    //               child: SingleChildScrollView(
+                    //                 child: Column(
+                    //                   children: CardCreator().cards,
+                    //                 ),
+                    //               ),
+                    //             );
+                    //       });
+                    //     }
+                    //   },
+                    // ),
+                Container(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: cc.cards,
                     ),
+                  ),
+                ),
                     SizedBox(
                       height: 10,
                     ),

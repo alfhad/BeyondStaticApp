@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'profileCards/scrollCard.dart';
 
 class ProjectData extends StatefulWidget {
   @override
@@ -17,6 +19,7 @@ class _ProjectDataState extends State<ProjectData> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
+                  //Projectname container ka design
                   margin: EdgeInsets.all(12.0),
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.only(left: 10, top: 10, right: 10),
@@ -36,8 +39,9 @@ class _ProjectDataState extends State<ProjectData> {
                   child: Column(
                     children: [
                       Row(
+                        //Project container ka nam
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const <Widget>[
+                        children: <Widget>[
                           Expanded(
                             child: Text(
                               'PROJECT NAME',
@@ -66,59 +70,79 @@ class _ProjectDataState extends State<ProjectData> {
                         height: 15,
                       ),
                       Row(
-                        children: const <Widget>[
+                        children: <Widget>[
+                          //entries vala
                           Text(
                             '13 new entries',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 14.0,
+                              fontSize: 18.0,
                             ),
                           ),
                           SizedBox(
                             width: 25.0,
                           ),
                           CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 20,
-                              child:
-                                  Icon(Icons.crop_square, color: Colors.black)),
-                          SizedBox(
-                            width: 5,
+                            backgroundColor: Colors.white,
+                            radius: 20,
+                            child: SvgPicture.asset(
+                              'images/stop_data.svg',
+                              color: Color(0xFF272D3B),
+                            ),
                           ),
-                          CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 20,
-                              child: Icon(Icons.refresh_sharp,
-                                  color: Colors.black)),
                           SizedBox(
-                            width: 5,
+                            width: 5.0,
                           ),
-                          CircleAvatar(
+
+                          // ignore: deprecated_member_use
+                           CircleAvatar(
                               backgroundColor: Colors.white,
-                              radius: 20,
-                              child: Icon(Icons.restore_from_trash,
-                                  color: Colors.black)),
+                              radius: 20, //icon refresh
+                              child: SvgPicture.asset(
+                                'images/reload.svg',
+                                color: Color(0xFF272D3B),
+                              ),
+                            ),
                           SizedBox(
-                            width: 5,
+                            width: 5.0,
                           ),
+
+
+
                           CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 20,
-                              child: Icon(Icons.refresh_sharp,
-                                  color: Colors.black)),
+                            backgroundColor: Colors.white,
+                            radius: 20,
+                            child: SvgPicture.asset(
+                              'images/delete_data.svg',
+                              color: Color(0xFF272D3B),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+
+                          CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 20,
+                            child: SvgPicture.asset(
+                              'images/dots_data.svg',
+                              color: Color(0xFF272D3B),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5.0,
+                          ),
                         ],
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
                 Container(
+                  //description container
                   margin: EdgeInsets.all(12),
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.all(10),
-                  height: 120,
+                  height: 140,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -131,63 +155,56 @@ class _ProjectDataState extends State<ProjectData> {
                         ),
                       ]),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const <Widget>[
-                      Text(
-                        'Description',
-                        style: TextStyle(
-                          color: Color(0xFF2D62ED),
-                          fontSize: 18.0,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Expanded(
-                        child: Text(
-                          'He found a leprechaun in his walnut shell.',
+                    children: <Widget>[
+                      Row(children: [
+                        Text(
+                          'Description', //description ka element
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Color(0xFF2D62ED),
                             fontSize: 18.0,
                           ),
                         ),
+                      ]),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      Row(children: [
+                        Expanded(
+                          child: Text(
+                            //description ka element
+                            'He found a leprechaun in his walnut shell.',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ),
+                      ]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xFF2D62ED),
+                            radius: 20, //description ka edit icon
+                            child: SvgPicture.asset(
+                              'images/edit_data.svg',
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+                ScrollCard(),
                 Container(
-                  margin: EdgeInsets.all(12),
+                  margin: EdgeInsets.all(10),
                   alignment: Alignment.topLeft,
-                  padding: EdgeInsets.all(10),
-                  height: 520,
+                  padding: EdgeInsets.fromLTRB(20.0, 20.0, 10.0, 10.0),
+                  height: 190,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      new BoxShadow(
-                        color: Color(0xFFD6D6D6),
-                        blurRadius: 10.0,
-                        offset: Offset(0.0, 10.0),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  margin: EdgeInsets.all(12),
-                  alignment: Alignment.topLeft,
-                  padding: EdgeInsets.all(10),
-                  height: 180,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.white, //field container
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     boxShadow: [
                       new BoxShadow(
@@ -200,20 +217,21 @@ class _ProjectDataState extends State<ProjectData> {
                     children: [
                       Row(children: [
                         Text(
-                          'Description',
+                          "Fields Name",
                           style: TextStyle(
                             color: Color(0xFF2D62ED),
-                            fontSize: 18,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ]),
                       SizedBox(
-                        height: 5,
+                        height: 8,
                       ),
                       Row(children: <Widget>[
                         Icon(
                           Icons.circle,
-                          color: Colors.blue,
+                          color: Color(0xFF2D62ED),
                           size: 9.5,
                         ),
                         SizedBox(
@@ -231,7 +249,7 @@ class _ProjectDataState extends State<ProjectData> {
                       Row(children: <Widget>[
                         Icon(
                           Icons.circle,
-                          color: Colors.blue,
+                          color: Color(0xFF2D62ED),
                           size: 9.5,
                         ),
                         SizedBox(
@@ -249,7 +267,7 @@ class _ProjectDataState extends State<ProjectData> {
                       Row(children: <Widget>[
                         Icon(
                           Icons.circle,
-                          color: Colors.blue,
+                          color: Color(0xFF2D62ED),
                           size: 9.5,
                         ),
                         SizedBox(
@@ -267,7 +285,7 @@ class _ProjectDataState extends State<ProjectData> {
                       Row(children: <Widget>[
                         Icon(
                           Icons.circle,
-                          color: Colors.blue,
+                          color: Color(0xFF2D62ED),
                           size: 9.5,
                         ),
                         SizedBox(
@@ -278,37 +296,35 @@ class _ProjectDataState extends State<ProjectData> {
                               color: Colors.black,
                               fontSize: 18,
                             )),
-                        SizedBox(
-                          width: 185,
-                        ),
-                        CircleAvatar(
-                            backgroundColor: Colors.blue,
-                            radius: 20,
-                            child:
-                                Icon(Icons.create_sharp, color: Colors.black)),
                       ]),
-                      SizedBox(
-                        height: 3,
-                      ),
+                      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                        CircleAvatar(
+                          radius: 17.0,
+                          backgroundColor: Color(0xFF2D62ED),
+                          child: SvgPicture.asset(
+                            'images/edit_data.svg',
+                            color: Colors.white,
+                          ),
+                        ),
+                      ]),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
                 Container(
+                  margin: EdgeInsets.all(10),
                   alignment: Alignment.topLeft,
-                  padding: EdgeInsets.all(10),
-                  height: 100,
+                  padding: EdgeInsets.fromLTRB(20, 20, 10, 10),
+                  height: 120,
                   width: double.infinity,
                   decoration: BoxDecoration(
+                    //website link container
                     color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     boxShadow: [
                       new BoxShadow(
-                        color: Colors.black,
-                        blurRadius: 0.5,
-                      ),
+                          color: Color(0xFFD6D6D6),
+                          blurRadius: 10.0,
+                          offset: Offset(0.0, 10.0)),
                     ],
                   ),
                   child: Column(
@@ -318,17 +334,18 @@ class _ProjectDataState extends State<ProjectData> {
                       Text(
                         'Website Link',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: Color(0xFF2D62ED),
+                          fontWeight: FontWeight.w600,
                           fontSize: 20,
                         ),
                       ),
                       SizedBox(
-                        height: 4,
+                        height: 8,
                       ),
                       Row(children: [
                         Icon(
                           Icons.circle,
-                          color: Colors.blue,
+                          color: Color(0xFF2D62ED),
                           size: 9.5,
                         ),
                         SizedBox(
@@ -338,8 +355,22 @@ class _ProjectDataState extends State<ProjectData> {
                             style: TextStyle(
                               fontSize: 20,
                               color: Colors.black,
-                            ))
-                      ])
+                            )),
+                      ]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          CircleAvatar(
+                            radius: 18.0,
+                            backgroundColor: Color(0xFF2D62ED),
+                            child: SvgPicture.asset(
+                              'images/edit_data.svg',
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),

@@ -53,7 +53,7 @@ class _NavState extends State<Nav> {
               backgroundColor: Colors.white,
               radius: 40.0,
               child: SvgPicture.asset(
-                'images/documentation.svg',
+                'images/doc_navbar.svg',
                 color: Color(0xFF2D62ED),
               ),
             ),

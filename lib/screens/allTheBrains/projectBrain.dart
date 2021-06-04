@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
-const SERVER_IP = 'http://192.168.0.104:8000/api';
+const SERVER_IP = 'http://192.168.0.102:8000/api';
 final storage = FlutterSecureStorage();
 
 class ProjectOptions {

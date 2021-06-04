@@ -34,6 +34,9 @@ dependencies:
   flutter_secure_storage: ^4.2.0
   image: ^3.0.2
   flutter_hooks: ^0.17.0
+  linked_scroll_controller: ^0.1.2
+
+
 
 dev_dependencies:
   flutter_test:

@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 final storage = FlutterSecureStorage();
 
-const SERVER_IP = 'http://192.168.0.104:8000/api/tokencheck';
+const SERVER_IP = 'http://192.168.0.102:8000/api/tokencheck';
 
 class Authenticate {
   Future<bool> get authenticateUser async {

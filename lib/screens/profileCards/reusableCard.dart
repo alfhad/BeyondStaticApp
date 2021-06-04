@@ -1,3 +1,5 @@
+import 'package:beyond_static_app/screens/allTheBrains/scrollBrain.dart';
+import 'package:beyond_static_app/screens/profileCards/scrollCard.dart';
 import 'package:flutter/material.dart';
 
 class ReusableCard extends StatelessWidget {
@@ -24,7 +26,12 @@ class ReusableCard extends StatelessWidget {
         ], color: colour, borderRadius: BorderRadius.circular(20.0)),
       ),
       onTap: () {
+
+        var temp = SelectedProject().getData(id);
+        print(temp);
+        ScrollCard().getRecord(temp);
         Navigator.pushNamed(context, '/project_data');
+
       },
     );
   }
