@@ -14,7 +14,7 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _currentIndex = 0;
 
-  List indexes = [false, false, false, false, false];
+  //List indexes = [false, false, false, false, false];
 
   List _widgetOptions = [
     //Home(),

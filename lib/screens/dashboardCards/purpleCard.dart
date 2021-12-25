@@ -11,7 +11,7 @@ class _PurpleCardState extends State<PurpleCard> {
   Future<String> getMessages() async {
     var totalMessages = await MessageLastDay().gethrsMessagesCount();
     return totalMessages.toString();
-  }
+ }
 
   @override
   Widget build(BuildContext context) {
